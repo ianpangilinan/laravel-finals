@@ -35,7 +35,7 @@ class PostController extends Controller
         Post::create([
             'subject' => $request->subject,
             'post' => $request->post,
-            'status' => (is_null($request->status ? 0 : 1)),
+            'status' => ($request->status == "on" ? 1 : 0),
 
         ]);
         return redirect()->route('post.index')->with('message', 'Post  Successfully Added');
@@ -55,7 +55,7 @@ class PostController extends Controller
      */
     public function edit(Post $post)
     {
-        //
+        return view('resources.post.edit', ['post' => $post]);
     }
 
     /**
@@ -63,7 +63,13 @@ class PostController extends Controller
      */
     public function update(UpdatePostRequest $request, Post $post)
     {
-        //
+        $post->update([
+            'subject' => $request->subject,
+            'post' => $request->post,
+            'status' => ($request->status == "on" ? 1 : 0),
+
+        ]);
+        return redirect()->route('post.index')->with('message', 'Post  Successfully Updated');
     }
 
     /**

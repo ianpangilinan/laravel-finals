@@ -30,10 +30,17 @@ Route::middleware(['auth', 'verified'])->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 
 
-    Route::get('/post', [PostController::class, 'index'])->name('post.index');
-    Route::get('/post/create', [PostController::class, 'create'])->name('post.create');
-    Route::post('/post/create', [PostController::class, 'store'])->name('post.store');
-    Route::get('/post/{post}', [PostController::class, 'show'])->name('post.show');
+    // Route::get('/post', [PostController::class, 'index'])->name('post.index');
+
+    // Route::get('/post/create', [PostController::class, 'create'])->name('post.create');
+    // Route::post('/post/create', [PostController::class, 'store'])->name('post.store');
+
+    // Route::get('/post/{post}/edit', [PostController::class, 'edit'])->name('post.edit');
+    // Route::put('/post', [PostController::class, 'update'])->name('post.update');
+
+    // Route::get('/post/{post}', [PostController::class, 'show'])->name('post.show');
+
+    Route::resource('/post', PostController::class);
 });
 
 
