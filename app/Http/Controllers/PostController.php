@@ -23,7 +23,7 @@ class PostController extends Controller
      */
     public function create()
     {
-        //
+        return view('resources.post.create');
     }
 
     /**
@@ -31,7 +31,15 @@ class PostController extends Controller
      */
     public function store(StorePostRequest $request)
     {
-        //
+
+        Post::create([
+            'subject' => $request->subject,
+            'post' => $request->post,
+            'status' => (is_null($request->status ? 0 : 1)),
+
+        ]);
+        return redirect()->route('post.index')->with('message', 'Post  Successfully Added');
+
     }
 
     /**

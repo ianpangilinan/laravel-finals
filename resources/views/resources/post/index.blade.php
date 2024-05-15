@@ -14,8 +14,28 @@
     <section class="section">
         <div class="row">
             <div class="col-lg-12">
+                @if(session()->has('message'))
+                    <div id="alert" class="alert alert-success bg-success text-light border-0 alert-dismissible fade show"
+                        role="alert">
+                        {{ session()->get('message') }}
+                        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="alert"
+                            aria-label="Close"></button>
+                    </div>
+                    <script>
+                        setTimeout(function () {
+                            var alert = document.getElementById('alert');
+                            alert.classList.remove('show');
+                            alert.classList.add('hide');
+                            setTimeout(function () {
+                                alert.parentNode.removeChild(alert);
+                            }, 1000); // 1 second for fade out transition
+                        }, 3000); // 3 seconds
+                    </script>
+                @endif
+
                 <div class="card">
-                    <div class="card-body p-5">
+                    <div class="card-body p-3">
+                        <a href="{{ route('post.create') }}" class="btn btn-primary mb-3">Add new post</a>
                         <!-- Table with stripped rows -->
                         <table class="table datatable">
                             <thead>
