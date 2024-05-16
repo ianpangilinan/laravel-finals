@@ -54,7 +54,7 @@
         </div>
 
         <div class="text-center">
-            <x-primary-button class="btn btn-primary">{{ __('Save') }}</x-primary-button>
+            <x-primary-button class="btn btn-primary w-50">{{ __('Save') }}</x-primary-button>
 
             @if (session('status') === 'profile-updated')
                 <p x-data="{ show: true }" x-show="show" x-transition x-init="setTimeout(() => show = false, 2000)"

@@ -55,7 +55,8 @@
                                         <td>
                                             <a href="{{ route('post.show', $post) }}" class="btn btn-info m-1"><i
                                                     class="bi bi-folder-symlink"></i></a>
-                                            <a href="#" class="btn btn-success m-1"><i class="bi bi-pencil-square"></i></a>
+                                            <a href="{{ route('post.edit', $post) }}" class="btn btn-success m-1"><i
+                                                    class="bi bi-pencil-square"></i></a>
                                             <a href="#" class="btn btn-danger m-1"><i class="bi bi-trash"></i></a>
 
                                         </td>
