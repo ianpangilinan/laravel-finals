@@ -96,9 +96,10 @@ class PostController extends Controller
 
     public function postStatus()
     {
-        $totalPosts = Post::count();
-        $unpublishedPosts = Post::where('status', 0)->count();
-        $publishedPosts = Post::where('status', 1)->count();
+        $userId = Auth::user()->id;
+        $totalPosts = Post::where('user_id', $userId)->count();
+        $unpublishedPosts = Post::where('user_id', $userId)->where('status', 0)->count();
+        $publishedPosts = Post::where('user_id', $userId)->where('status', 1)->count();
 
         return view('dashboard', compact('totalPosts', 'unpublishedPosts', 'publishedPosts'));
     }
