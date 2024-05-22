@@ -104,4 +104,10 @@ class PostController extends Controller
         return view('dashboard', compact('totalPosts', 'unpublishedPosts', 'publishedPosts'));
     }
 
+    public function postPage()
+    {
+        $posts = Post::all();
+        return view('pages.auth-index', ['posts' => $posts]);
+    }
+
 }

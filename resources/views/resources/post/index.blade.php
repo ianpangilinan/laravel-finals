@@ -5,7 +5,7 @@
         <nav>
             <ol class="breadcrumb">
                 <li class="breadcrumb-item"><a href="{{ route('dashboard') }}">{{ __('Dashboard') }}</a></li>
-                <li class="breadcrumb-item active">{{ __('Resources') }}</li>
+                <li class="breadcrumb-item ">{{ __('Resources | Post') }}</li>
             </ol>
         </nav>
     </div>
