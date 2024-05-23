@@ -8,7 +8,7 @@
         </li>
 
         <li class="nav-item">
-            <a class="nav-link collapsed {{ request()->routeIs('post.index') || request()->routeIs('comment.index') || request()->routeIs('resources') ? 'active' : '' }}"
+            <a class="nav-link {{ request()->routeIs('post.index') || request()->routeIs('comment.index') || request()->routeIs('resources') ? 'active' : '' }}"
                 data-bs-target="#resources-nav" data-bs-toggle="collapse" href="#">
                 <i class="bi bi-menu-button-wide"></i>
                 <span>Resources</span>
@@ -62,6 +62,10 @@
         const resourceNav = document.querySelector('a[data-bs-target="#resources-nav"]');
         if (activeChild) {
             resourceNav.classList.add('active');
+            const parentMenu = activeChild.closest('.nav-content');
+            if (parentMenu) {
+                parentMenu.classList.add('show');
+            }
         }
     });
 </script>
