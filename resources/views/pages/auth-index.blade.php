@@ -73,7 +73,8 @@
                             @csrf
                             <input type="hidden" name="post_id" value="{{ $post->id }}">
                             <textarea name="comment" id="comment" class="form-control"></textarea>
-                            <button type="submit" class="btn btn-secondary mt-3">Comment</button>
+                            <button type="submit" class="btn btn-primary mt-3"> <i class="ri ri-chat-3-line"></i> Comment
+                            </button>
                             <input type="hidden" name="status" value="{{ $post->status }}">
                         </form>
                     </div>
