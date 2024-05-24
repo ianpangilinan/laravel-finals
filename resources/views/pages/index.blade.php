@@ -31,7 +31,14 @@
 </head>
 
 <body class="font-sans antialiased">
-
+    <header class="bg-light py-3">
+        <div class="container d-flex justify-content-end align-items-center">
+            <div>
+                <a href="{{ route('login') }}" class="btn btn-primary mr-2">Login</a>
+                <a href="{{ route('register') }}" class="btn btn-secondary">Register</a>
+            </div>
+        </div>
+    </header>
     <main>
         <div class="container my-5">
             <div class="row">
